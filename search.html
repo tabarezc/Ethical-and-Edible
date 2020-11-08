@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    
+<head>
+    <link rel="stylesheet" href="search.css" />
+    <meta charset="utf-8" />
+    <title>Ethical and Edible</title>
+</head>
+<body>
+
+ <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+
+<ul id="myUL">
+  <li><a href="#">Tomato Soup</a></li>
+  <li><a href="#">Chicken Noodle Soup</a></li>
+  <li><a href="#">Risotto</a></li>
+</ul> </body>
+    <script>
+function myFunction() {
+  // Declare variables
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById('myInput');
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myUL");
+  li = ul.getElementsByTagName('li');
+
+  // Loop through all list items, and hide those who don't match the search query
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+</script>
+</html>
