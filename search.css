@@ -1,32 +1,54 @@
-﻿#myInput {
-    background-image: url("searchicon.png"); /* Add a search icon to input */
-    background-position: 10px 12px; /* Position the search icon */
-    background-repeat: no-repeat; /* Do not repeat the icon image */
-    width: 100%; /* Full-width */
-    font-size: 16px; /* Increase font-size */
-    padding: 12px 20px 12px 40px; /* Add some padding */
-    border: 1px solid #ddd; /* Add a grey border */
-    margin-bottom: 12px; /* Add some space below the input */
+﻿body {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-#myUL {
-    /* Remove default list styling */
+* {
+    box-sizing: border-box;
+}
+
+/* Create a column layout with Flexbox */
+.row {
+    display: flex;
+}
+
+/* Left column (menu) */
+.left {
+    flex: 35%;
+    padding: 15px 0;
+}
+
+    .left h2 {
+        padding-left: 8px;
+    }
+
+/* Right column (page content) */
+.right {
+    flex: 65%;
+    padding: 15px;
+}
+
+/* Style the search box */
+#mySearch {
+    width: 100%;
+    font-size: 18px;
+    padding: 11px;
+    border: 1px solid #ddd;
+}
+
+/* Style the navigation menu inside the left column */
+#myMenu {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
-    #myUL li a {
-        border: 1px solid #ddd; /* Add a border to all links */
-        margin-top: -1px; /* Prevent double borders */
-        background-color: #f6f6f6; /* Grey background color */
-        padding: 12px; /* Add some padding */
-        text-decoration: none; /* Remove default text underline */
-        font-size: 18px; /* Increase the font-size */
-        color: black; /* Add a black text color */
-        display: block; /* Make it into a block element to fill the whole list */
+    #myMenu li a {
+        padding: 12px;
+        text-decoration: none;
+        color: black;
+        display: block
     }
 
-        #myUL li a:hover:not(.header) {
-            background-color: #eee; /* Add a hover effect to all links, except for headers */
+        #myMenu li a:hover {
+            background-color: #eee;
         }

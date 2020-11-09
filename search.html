@@ -9,32 +9,54 @@
 </head>
 <body>
 
- <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for recipes..">
+    <embed type="text/html" src="navbar.html"/>
 
-<ul id="myUL">
-  <li><a href="#">Tomato Soup</a></li>
-  <li><a href="#">Chicken Noodle Soup</a></li>
-  <li><a href="#">Risotto</a></li>
-</ul> </body>
-    <script>
-function myFunction() {
-  // Declare variables
-  var input, filter, ul, li, a, i, txtValue;
-  input = document.getElementById('myInput');
-  filter = input.value.toUpperCase();
-  ul = document.getElementById("myUL");
-  li = ul.getElementsByTagName('li');
+<h2>Search Menu</h2>
+<p>Start to type for a specific category inside the search bar to "filter" the search options.</p>
 
-  // Loop through all list items, and hide those who don't match the search query
-  for (i = 0; i < li.length; i++) {
-    a = li[i].getElementsByTagName("a")[0];
-    txtValue = a.textContent || a.innerText;
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      li[i].style.display = "";
-    } else {
-      li[i].style.display = "none";
+<div class="row">
+  <div class="left" style="background-color:#bbb;">
+    <h2>Menu</h2>
+    <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+    <ul id="myMenu">
+      <li><a href="#">Tomato Soup</a></li>
+      <li><a href="#">Chicken Noodle Soup</a></li>
+      <li><a href="#">French Onion Soup</a></li>
+      <li><a href="#">Baked Potato Soup</a></li>
+      <li><a href="#">Meatloaf</a></li>
+      <li><a href="#">Spaghetti</a></li>
+      <li><a href="#">Carne Asada Tacos</a></li>
+      <li><a href="#">Baked Alaska</a></li>
+      <li><a href="#">Caramel Apple Cheesecake</a></li>
+    </ul>
+  </div>
+  
+  <div class="right" style="background-color:#ddd;">
+    <h2>Page Content</h2>
+    <p>Start to type for a specific category inside the search bar to "filter" the search options.</p>
+    <p>Some text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
+    <p>Some other text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
+    <p>Some text..</p>
+  </div>
+</div>
+
+<script>
+    function myFunction() {
+        var input, filter, ul, li, a, i;
+        input = document.getElementById("mySearch");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("myMenu");
+        li = ul.getElementsByTagName("li");
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
     }
-  }
-}
 </script>
+
+</body>
 </html>
