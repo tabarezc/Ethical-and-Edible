@@ -6,10 +6,23 @@
     <link rel="stylesheet" href="search.css" />
     <meta charset="utf-8" />
     <title>Ethical and Edible</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
 </head>
 <body>
 
-    <embed type="text/html" src="navbar.html"/>
+    <!--Navigation bar-->
+<div id="nav-placeholder">
+
+</div>
+
+<script>
+    $(function () {
+        $("#nav-placeholder").load("navbar.html");
+    });
+</script>
+<!--end of Navigation bar-->
+ 
 
 <h2>Search Menu</h2>
 <p>Start to type for a specific category inside the search bar to "filter" the search options.</p>
