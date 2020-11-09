@@ -4,9 +4,22 @@
   <meta charset="UTF-8">
   <title>Ethical Ingredients</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
- </head>
- <body>
-    <!-- put NAV BAR here -->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+</head>
+<body>
+
+    <!--Navigation bar-->
+<div id="nav-placeholder" style="width:50%; margin: auto;">
+
+</div>
+
+<script>
+    $(function () {
+        $("#nav-placeholder").load("navbar.html");
+    });
+</script>
+<!--end of Navigation bar-->
     
     <!-- Search bar for ingredients-->
     <div class="searchbar">
