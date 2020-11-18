@@ -21,9 +21,15 @@
     height:398px;
     background:#cf9;
     }
-#content {
+#content1 {
     margin-left:202px;   
-    width:558;
+    width:200;
+    height:398px;
+    background:#ffa;
+    }
+#content2 {
+    margin-left:404px;   
+    widows:200px;
     height:398px;
     background:#ffa;
     }
