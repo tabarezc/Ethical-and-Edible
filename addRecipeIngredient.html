@@ -6,6 +6,7 @@
     <title></title>
     
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<link href="addRecipeIngredientLayout.css" rel="stylesheet" type="text/css" />
 
 </head>
 <body>
@@ -21,78 +22,53 @@
     });
 </script>
 <!--end of Navigation bar-->
-	<a href='Home.html'><button>Home</button></a>
-	<input type="button" onclick="" value="Login / Sign Up" style='position:absolute; right: 50%; floating: right'>
+	<div id="header">
+		<a href='Home.html'><button>Home</button></a>
+		<input type="button" onclick="" value="Login / Sign Up">
+	</div>
 	
-	<h1>ADDING NEW RECIPES & INGREDIENTS<h1>
-
-	<div>
-		<!-- Form -->
-		<form style='border:1px solid black; height: 195px; width: 630px; font-size: 18px'>
-			<div>
+	<div id="title">
+		<h1>ADDING NEW RECIPES<h1>
+	</div>
+	
+	<div id="mainContent">
 			Enter new recipe name:
-				<input type="text" name="recipeName" id="recipeName">
-			</div>
-
-			<div style='position: absolute; top: 149px;'>
-				List of Ingredients
+			<input type="text" name="recipeName" id="recipeName">
+			
+			<div id="leftContent">
+				List of Ingredients				
+				<ul style='border:1px solid black; width:150px'>
+				  <li>Tomato</li>
+				  <li>Pineapple</li>
+				  <li>Bread</li>
+				  <li>Coke</li>
+				</ul> 
 			</div>
 			
-			<ul style='position:relative; left: 5px; top: 25px; border:1px solid black; width:200px'>
-			  <li>Tomato</li>
-			  <li>Pineapple</li>
-			  <li>Bread</li>
-			  <li>Coke</li>
-			</ul>  
-			
-			<div style='position: absolute; top: 190px; left: 293px; height: 100px'>
+			<div id="centerContent">
 				<input type="button" onclick="" value="Add -->">
-			</div>
-			
-			<div style='position: absolute; top: 220px; left: 283px; height: 100px'>	
 				<input type="button" onclick="" value="<-- Remove">
 			</div>
 			
-			<div style='position: absolute; top: 149px; left: 390px;'>
+			<div id="rightContent">
 				Selected Ingredients
+				<ul style='border:1px solid black; height: 72px; width: 150px'>
+				  <li></li>
+				  <li></li>
+				</ul>  
 			</div>
-			<ul style='border:1px solid black; position: absolute; top: 157px; left: 390px; height: 85px; width: 200px'>
-			  <li></li>
-			  <li></li>
-			</ul>  
+			<input style='position:absolute; left: 5px; top: 140px;' type="submit" name="Add Recipe" value="Add The Recipe" id="add_the_recipe">
 
-			<input style='position:relative; left: 5px; top: 15px;' type="submit" name="Add Recipe" value="Add The Recipe" id="add_the_recipe">
-		</form>
-		<!-- Form -->
 	</div>
 	
-	<div style="position: relative; top: 10px">
-		<!-- Form -->
-		<form style='border:1px solid black; height: 110px; width: 630px; font-size: 18px'>
-			Add a new ingredient to the list:
-			<div>
-			Name:
-				<input type="text" name="ingredientName" id="ingredientName">														
-			</div>
-			
-			<div>
-			Ethical Information:
-				<input type="text" name="ethicalInfor" id="ethicalInfor">
-			</div>
-
-			<input style='position:relative; left: 5px; top: 10px;' type="submit" name="Add Ingredient" value="Add The Ingredient" id="add_the_ingredient">
-			
-		</form>
-		<!-- Form -->		
-	</div>
-	
-	<div>
-		<a style='position:absolute; right: 51%; floating: right; top: 435px' href='instructionsToAddRecipe.html'><button>How to add a new recipe?</button></a>
-		<input type="button" onclick="" value="How to add a new ingredient?" style='position:absolute; right: 51%; floating: right; top: 480px'>
-	</div>
-	
-	<div style='position:relative; top: 20px; font-size: 18px'>
-		*Required
+	<div id="footer">
+		<div>
+			<a href='instructionsToAddRecipe.html'><button>How to add a new recipe?</button></a>
+		</div>
+		
+		<div style='position:relative; top: 20px; font-size: 18px'>
+			*Required
+		</div>
 	</div>
 </body>
 </html>

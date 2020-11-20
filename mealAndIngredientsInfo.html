@@ -1,23 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>A Simple CSS lyaout demo, Jiansen Lu</title>
+  <title></title>
   <link href="mealAndIngredientInfoLayout.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div id="container">
   <div id="header">
     <a href='Home.html'><button>Home</button></a>
+    <a href=''><button>Login / Sign Up</button></a>
   </div>
+  <div id="title">Meal Typed In Search</div>
   <div id="mainContent">
-    <div id="sidebar">List of Ingredients</div>
-    <div id="content1">Potential Problems</div>
-    <div id="content2">Ethical Alternatives</div>
+    <div id="sidebar">
+      List of Ingredients
+      <textarea id="listOfIngredients" name="listOfIngredients" rows="24" cols="24">
+      </textarea></div>
+    <div id="content1">
+      Potential Problems
+      <textarea id="potentialProblems" name="potentialProblems" rows="24" cols="45">
+      </textarea></div>
+    <div id="content2">
+      Ethical Alternatives
+      <textarea id="ethicalAlternatives" name="ethicalAlternatives" rows="24" cols="24">
+      </textarea></div>
   </div>
   <div id="footer">
-    <a href='Home.html'><button>Save The Recipe To My Account</button></a>
+    <a href=''><button>Save The Recipe To My Account</button></a>
     <span style="display:none"></span>
-</div>
+  </div>
 </div>
 </body>
 </html>

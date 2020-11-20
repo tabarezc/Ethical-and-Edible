@@ -2,13 +2,16 @@
     /*defaut all margin 0,  The browser calculates a margin*/
     margin:0 auto;
     width:760px
-    }
+	}
 #header {
     height:30px;
     background:#9c6;
     margin-bottom:5px;
     }
 #title {
+	display: flex;
+    justify-content: center;
+    align-items: center;
     height:70px;
     background:#9c6;
     /* title and main content distance 5 px */
@@ -17,33 +20,33 @@
 #mainContent {
     position:relative;
     height:400px;
+	background:#ffa;
     }
-#sidebar {
-    position:absolute;
-    top:0;
-    left:0;
+#leftContent {
+    position:absolute;  
+	left:0;
     width:200px;
-    height:398px;
-    background:#cf9;
-    }
-#content1 {
-    position:absolute;
-    margin-left:202px;   
-    width:350px;
-    height:398px;
+    height:200px;
     background:#ffa;
-    }
-#content2 {
-    position:absolute;
-    margin-left:554px;   
-    width:205px;
-    height:398px;
+    }	
+#centerContent {
+	position:absolute;  
+	margin-left:210px;
+	width:100px;
+	height:70px;
+	top:70px;
+	background:#ffa;
+}
+#rightContent {
+    position:absolute;  
+	margin-left:300px;
+    width:350px;
+    height:200px;
     background:#ffa;
     }
 #footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	margin-top:5px;
     height:60px;
     background:#9c6;
-    }
+    }	
+	
