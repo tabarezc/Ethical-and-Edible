@@ -1,0 +1,49 @@
+#header, #title, #mainContent, #footer{
+    /*defaut all margin 0,  The browser calculates a margin*/
+    margin:0 auto;
+    width:760px
+    }
+#header {
+    height:30px;
+    background:#9c6;
+    margin-bottom:5px;
+    }
+#title {
+    height:70px;
+    background:#9c6;
+    /* title and main content distance 5 px */
+    margin-bottom:5px;
+    }
+#mainContent {
+    position:relative;
+    height:400px;
+    }
+#sidebar {
+    position:absolute;
+    top:0;
+    left:0;
+    width:200px;
+    height:398px;
+    background:#cf9;
+    }
+#content1 {
+    position:absolute;
+    margin-left:202px;   
+    width:350px;
+    height:398px;
+    background:#ffa;
+    }
+#content2 {
+    position:absolute;
+    margin-left:554px;   
+    width:205px;
+    height:398px;
+    background:#ffa;
+    }
+#footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:60px;
+    background:#9c6;
+    }
