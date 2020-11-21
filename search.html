@@ -57,8 +57,11 @@
 
     var testList = document.getElementById("myMenu");
     var menu = document.createElement("li");
+    var node = document.createTextNode("test");
+
     //menu.outerHTML('<a href="#">Caramel Apple Cheesecake</a>');
     testList.appendChild(menu);
+
 
     function myFunction() {
         var input, filter, ul, li, a, i;
@@ -78,6 +81,7 @@
 
     const xhr = new XMLHttpRequest();
 
+    //Connects to JSON object and creates a Javascript Object
     xhr.onload = function () {
         try {
             const resObj = JSON.parse(this.responseText);
