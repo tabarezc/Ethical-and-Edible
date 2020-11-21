@@ -1,10 +1,28 @@
-{"Ingredients" : [
-  {
-    "name": "Avocado",
-    "type": "fruit",
-    "rating": "1",
-    "ethical alternatives": "Chickpeas",
-    "potential problems": "Takes up lots of water"
-  }
-    ]
+{
+  "Ingredients": [
+    {
+      "name": "Avocado",
+      "type": "Fruit",
+      "rating": 1,
+      "ethical alternatives": "Chickpeas",
+      "potential problems": "Takes up lots of water"
+    },
+    {
+      "name": "Apple",
+      "type": "Fruit",
+      "rating": 10,
+      "ethical alternatives": "None",
+      "potential problems": "None"
+    }
+  ],
+  "Recipes": [
+    {
+      "name": "Test Recipe",
+      "ingredients": [
+        "Avocado", "Apple"
+      ]
+    }
+  ]
+
+
 }

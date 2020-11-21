@@ -54,6 +54,12 @@
 </div>
 
 <script>
+
+    var testList = document.getElementById("myMenu");
+    var menu = document.createElement("li");
+    //menu.outerHTML('<a href="#">Caramel Apple Cheesecake</a>');
+    testList.appendChild(menu);
+
     function myFunction() {
         var input, filter, ul, li, a, i;
         input = document.getElementById("mySearch");
@@ -69,6 +75,28 @@
             }
         }
     }
+
+    const xhr = new XMLHttpRequest();
+
+    xhr.onload = function () {
+        try {
+            const resObj = JSON.parse(this.responseText);
+            console.log(resObj);
+
+
+
+            //var result = resObj.filter(obj => obj.Ingredients.name == "Apple");
+
+
+        } catch (e) {
+            console.warn("Could not parse JSON!");
+        }
+    };
+
+    xhr.open("get", "test.json");
+    xhr.send();
+
+
 </script>
 
 </body>
