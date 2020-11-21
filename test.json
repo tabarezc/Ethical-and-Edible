@@ -1,7 +1,10 @@
-{
-  "name": "Avocado",
-  "type" :  "fruit",
-  "rating": "1",
-  "ethical alternatives": "Chickpeas",
-  "potential problems" : "Takes up lots of water"
+{"Ingredients" : [
+  {
+    "name": "Avocado",
+    "type": "fruit",
+    "rating": "1",
+    "ethical alternatives": "Chickpeas",
+    "potential problems": "Takes up lots of water"
+  }
+    ]
 }
