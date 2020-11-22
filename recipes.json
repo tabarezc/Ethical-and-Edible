@@ -1,0 +1,25 @@
+{
+    "Recipes": [
+        {
+            "name": "Test Recipe",
+            "ingredients": [
+                "Avocado",
+                "Apple"
+            ]
+        },
+        {
+            "name": "Test Recipe2",
+            "ingredients": [
+                "Avocado",
+                "Apple"
+            ]
+        },
+        {
+            "name": "Test Recipe3",
+            "ingredients": [
+                "Avocado",
+                "Apple"
+            ]
+        }
+    ]
+}

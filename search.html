@@ -26,38 +26,33 @@
 
 <h2>Search Menu</h2>
 <p>Start to type for a specific category inside the search bar to "filter" the search options.</p>
+    <div class="row">
+    <div class="left" style="background-color:#bbb;">
+        <h2>Menu</h2>
+        <input type="search" id="mySearch" placeholder="Search.." title="Type in a category">
+        <ul id="myMenu">
+        <li id="recipeName"><li>
+        
 
-<div class="row">
-  <div class="left" style="background-color:#bbb;">
-    <h2>Menu</h2>
-    <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
-    <ul id="myMenu">
-      <li><a href="#">Tomato Soup</a></li>
-      <li><a href="#">Chicken Noodle Soup</a></li>
-      <li><a href="#">French Onion Soup</a></li>
-      <li><a href="#">Baked Potato Soup</a></li>
-      <li><a href="#">Meatloaf</a></li>
-      <li><a href="#">Spaghetti</a></li>
-      <li><a href="#">Carne Asada Tacos</a></li>
-      <li><a href="#">Baked Alaska</a></li>
-      <li><a href="#">Caramel Apple Cheesecake</a></li>
-    </ul>
-  </div>
-  
-  <div class="right" style="background-color:#ddd;">
-    <h2>Page Content</h2>
-    <p>Start to type for a specific category inside the search bar to "filter" the search options.</p>
-    <p>Some text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
-    <p>Some other text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
-    <p>Some text..</p>
-  </div>
-</div>
-<div align="center">
-    <div><button onclick="location.href='recipeLibrary.html'">Save to Recipe Library</button></div>
-</div>
+
+        </ul>
+    </div>
+    
+    <div class="right" style="background-color:#ddd;">
+        <h2>Page Content</h2>
+        <p>Start to type for a specific category inside the search bar to "filter" the search options.</p>
+        <p>Some text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
+        <p>Some other text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
+        <p>Some text..</p>
+    </div>
+    </div>
+    <div align="center">
+        <div><button onclick="location.href='recipeLibrary.html'">Save to Recipe Library</button></div>
+    </div>
+
 <script>
 
-    var testList = document.getElementById("myMenu");
+    /*ar testList = document.getElementById("myMenu");
     var menu = document.createElement("li");
     //menu.outerHTML('<a href="#">Caramel Apple Cheesecake</a>');
     testList.appendChild(menu);
@@ -76,9 +71,10 @@
                 li[i].style.display = "none";
             }
         }
-    }
+    }*/
 
-    const xhr = new XMLHttpRequest();
+    
+    /*const xhr = new XMLHttpRequest();
 
     xhr.onload = function () {
         try {
@@ -87,7 +83,7 @@
 
 
 
-            //var result = resObj.filter(obj => obj.Ingredients.name == "Apple");
+            //var result = resObj.filter(obj => obj.Receipes.name == "Apple");
 
 
         } catch (e) {
@@ -96,7 +92,55 @@
     };
 
     xhr.open("get", "test.json");
-    xhr.send();
+    xhr.send();*/
+
+    //TESTING CODE
+    /*document.addEventListener('DOMContentLoaded', bindButtons);
+
+    function bindButtons(){
+        document.getElementById('mySearch').addEventListener('search', function(event){
+          var req = new XMLHttpRequest();
+          //var payload = {longUrl:null};
+          //payload.longUrl = document.getElementById('recipeName').value;
+          req.open('GET', 'test.json', true);
+          //req.setRequestHeader('Content-Type', 'application/json');
+          //req.send(JSON.stringify(payload));
+          var response = JSON.parse(req.responseText);
+          document.getElementById('demo').textContent = response;
+          event.preventDefault();
+        })
+      }*/
+
+    document.addEventListener('DOMContentLoaded', bindButtons);
+
+    function bindButtons(){
+        document.getElementById('mySearch').addEventListener('search', function(event){
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var myArr = JSON.parse(this.responseText);
+                //get # of items in array
+                var count = myArr.Recipes.length;
+                //document.getElementById("count").innerHTML = count;
+                input = document.getElementById("mySearch");
+                searchName = input.value.toUpperCase();
+                for(var i = 0; i < count; i++){
+                    if( searchName == myArr.Recipes[i].name.toUpperCase()){
+                        document.getElementById("recipeName").innerHTML = myArr.Recipes[i].name;
+                        var ingredients = myArr.Recipes[i].ingredients
+                        break;
+                    }else{
+                        document.getElementById("recipeName").innerHTML = "no matching results";
+                    }
+                }
+            }
+        };
+        xmlhttp.open("GET", "recipes.json", true);
+        xmlhttp.send();
+        event.preventDefault();
+        })
+    }
+
 
 
 </script>
