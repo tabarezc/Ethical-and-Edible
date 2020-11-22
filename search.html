@@ -130,8 +130,11 @@
                 searchName = input.value.toUpperCase();
                 for(var i = 0; i < count; i++){
                     if( searchName == myArr.Recipes[i].name.toUpperCase()){
-                        $('#myingredients').empty();
+                        //make sure list of ingredients is cleared from previous searches
+                        $('#myingredients').empty(); 
+                        //to show found recipe names
                         document.getElementById("recipeName").innerHTML = myArr.Recipes[i].name;
+                        //to populate ingredients list for found recipe
                         var ingredients = myArr.Recipes[i].ingredients;
                         var ul = document.getElementById("myingredients");
                         for( var j = 0; j < ingredients.length; j++){
@@ -143,6 +146,7 @@
                         break;
                     }else{
                         document.getElementById("recipeName").innerHTML = "no matching results";
+                        //make sure list of ingredients is cleared from previous searches
                         $('#myingredients').empty();
                     }
                 }
