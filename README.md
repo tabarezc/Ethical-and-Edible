@@ -1,4 +1,8 @@
 # Ethical-and-Edible
 Release 2 Notes (11/22/2020):
-To view a functional search.html page, start a local server on your machine. Our group used this command:
+Steps to view html files:
+1) Download all files to a local computer
+2) Open them using local browser
+3) Some buttons work and some don't
+4) To view a functional search.html page, start a local server on your machine. Our group used this command:
 python -m SimpleHTTPServer 8000
