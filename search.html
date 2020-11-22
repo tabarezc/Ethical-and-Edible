@@ -3,6 +3,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
     
 <head>
+    <link rel="stylesheet" href="modal.css" />
     <link rel="stylesheet" href="search.css" />
     <meta charset="utf-8" />
     <title>Ethical and Edible</title>
@@ -30,20 +31,19 @@
     <div class="left" style="background-color:#bbb;">
         <h2>Menu</h2>
         <input type="search" id="mySearch" placeholder="Search.." title="Type in a category">
-        <ul id="myMenu">
-        <li id="recipeName"><li>
         
-
-
-        </ul>
+        
+        
     </div>
     
-    <div class="right" style="background-color:#ddd;">
-        <h2>Page Content</h2>
-        <p>Start to type for a specific category inside the search bar to "filter" the search options.</p>
-        <p>Some text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
-        <p>Some other text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
-        <p>Some text..</p>
+<div class="right" style="background-color:#ddd;">
+    <ul id="myMenu">
+        <h1 id="recipeName"></h1>
+            <div class="ingredientlist">
+                <h2 class="ingredientlist">Ingredients:</h2>
+                <ul id="myingredients" ></ul>
+            </div>
+    </ul>
     </div>
     </div>
     <div align="center">
@@ -126,11 +126,20 @@
                 searchName = input.value.toUpperCase();
                 for(var i = 0; i < count; i++){
                     if( searchName == myArr.Recipes[i].name.toUpperCase()){
+                        $('#myingredients').empty();
                         document.getElementById("recipeName").innerHTML = myArr.Recipes[i].name;
-                        var ingredients = myArr.Recipes[i].ingredients
+                        var ingredients = myArr.Recipes[i].ingredients;
+                        var ul = document.getElementById("myingredients");
+                        for( var j = 0; j < ingredients.length; j++){
+                            var ingredient = ingredients[j];
+                            var listItem = document.createElement("li");
+                            listItem.textContent = ingredient;
+                            ul.appendChild(listItem);
+                        }
                         break;
                     }else{
                         document.getElementById("recipeName").innerHTML = "no matching results";
+                        $('#myingredients').empty();
                     }
                 }
             }
@@ -144,6 +153,6 @@
 
 
 </script>
-
+<script src="modal.js"></script>
 </body>
 </html>

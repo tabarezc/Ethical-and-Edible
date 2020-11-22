@@ -25,7 +25,7 @@
 /* Right column (page content) */
 .right {
     flex: 65%;
-    padding: 15px;
+    padding: 20px;
 }
 
 /* Style the search box */

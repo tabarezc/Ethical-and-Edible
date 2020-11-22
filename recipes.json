@@ -10,15 +10,16 @@
         {
             "name": "Test Recipe2",
             "ingredients": [
-                "Avocado",
-                "Apple"
+                "Orange",
+                "Spinach"
             ]
         },
         {
             "name": "Test Recipe3",
             "ingredients": [
-                "Avocado",
-                "Apple"
+                "Banana",
+                "Cherry",
+                "Almond Milk"
             ]
         }
     ]
