@@ -144,7 +144,10 @@
                             ul.appendChild(listItem);
                         }
                         break;
-                    }else{
+                    }else if (searchName == "" ){
+                        document.getElementById("recipeName").innerHTML = "";
+                        $('#myingredients').empty();
+                    } else{
                         document.getElementById("recipeName").innerHTML = "no matching results";
                         //make sure list of ingredients is cleared from previous searches
                         $('#myingredients').empty();
