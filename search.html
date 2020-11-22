@@ -3,6 +3,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
     
 <head>
+    <link rel="stylesheet" href="modal.css" />
     <link rel="stylesheet" href="search.css" />
     <meta charset="utf-8" />
     <title>Ethical and Edible</title>
@@ -26,36 +27,32 @@
 
 <h2>Search Menu</h2>
 <p>Start to type for a specific category inside the search bar to "filter" the search options.</p>
-
-<div class="row">
-  <div class="left" style="background-color:#bbb;">
-    <h2>Menu</h2>
-    <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+    <div class="row">
+    <div class="left" style="background-color:#bbb;">
+        <h2>Menu</h2>
+        <input type="search" id="mySearch" placeholder="Search.." title="Type in a category">
+        
+        
+        
+    </div>
+    
+<div class="right" style="background-color:#ddd;">
     <ul id="myMenu">
-      <li><a href="#">Tomato Soup</a></li>
-      <li><a href="#">Chicken Noodle Soup</a></li>
-      <li><a href="#">French Onion Soup</a></li>
-      <li><a href="#">Baked Potato Soup</a></li>
-      <li><a href="#">Meatloaf</a></li>
-      <li><a href="#">Spaghetti</a></li>
-      <li><a href="#">Carne Asada Tacos</a></li>
-      <li><a href="#">Baked Alaska</a></li>
-      <li><a href="#">Caramel Apple Cheesecake</a></li>
+        <h1 id="recipeName"></h1>
+            <div class="ingredientlist">
+                <h2 class="ingredientlist">Ingredients:</h2>
+                <ul id="myingredients" ></ul>
+            </div>
     </ul>
-  </div>
-  
-  <div class="right" style="background-color:#ddd;">
-    <h2>Page Content</h2>
-    <p>Start to type for a specific category inside the search bar to "filter" the search options.</p>
-    <p>Some text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
-    <p>Some other text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
-    <p>Some text..</p>
-  </div>
-</div>
+    </div>
+    </div>
+    <div align="center">
+        <div><button onclick="location.href='recipeLibrary.html'">Save to Recipe Library</button></div>
+    </div>
 
 <script>
 
-    var testList = document.getElementById("myMenu");
+    /*ar testList = document.getElementById("myMenu");
     var menu = document.createElement("li");
     var node = document.createTextNode("test");
 
@@ -77,9 +74,10 @@
                 li[i].style.display = "none";
             }
         }
-    }
+    }*/
 
-    const xhr = new XMLHttpRequest();
+    
+    /*const xhr = new XMLHttpRequest();
 
     //Connects to JSON object and creates a Javascript Object
     xhr.onload = function () {
@@ -89,7 +87,7 @@
 
 
 
-            //var result = resObj.filter(obj => obj.Ingredients.name == "Apple");
+            //var result = resObj.filter(obj => obj.Receipes.name == "Apple");
 
 
         } catch (e) {
@@ -98,10 +96,67 @@
     };
 
     xhr.open("get", "test.json");
-    xhr.send();
+    xhr.send();*/
+
+    //TESTING CODE
+    /*document.addEventListener('DOMContentLoaded', bindButtons);
+
+    function bindButtons(){
+        document.getElementById('mySearch').addEventListener('search', function(event){
+          var req = new XMLHttpRequest();
+          //var payload = {longUrl:null};
+          //payload.longUrl = document.getElementById('recipeName').value;
+          req.open('GET', 'test.json', true);
+          //req.setRequestHeader('Content-Type', 'application/json');
+          //req.send(JSON.stringify(payload));
+          var response = JSON.parse(req.responseText);
+          document.getElementById('demo').textContent = response;
+          event.preventDefault();
+        })
+      }*/
+
+    document.addEventListener('DOMContentLoaded', bindButtons);
+
+    function bindButtons(){
+        document.getElementById('mySearch').addEventListener('search', function(event){
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var myArr = JSON.parse(this.responseText);
+                //get # of items in array
+                var count = myArr.Recipes.length;
+                //document.getElementById("count").innerHTML = count;
+                input = document.getElementById("mySearch");
+                searchName = input.value.toUpperCase();
+                for(var i = 0; i < count; i++){
+                    if( searchName == myArr.Recipes[i].name.toUpperCase()){
+                        $('#myingredients').empty();
+                        document.getElementById("recipeName").innerHTML = myArr.Recipes[i].name;
+                        var ingredients = myArr.Recipes[i].ingredients;
+                        var ul = document.getElementById("myingredients");
+                        for( var j = 0; j < ingredients.length; j++){
+                            var ingredient = ingredients[j];
+                            var listItem = document.createElement("li");
+                            listItem.textContent = ingredient;
+                            ul.appendChild(listItem);
+                        }
+                        break;
+                    }else{
+                        document.getElementById("recipeName").innerHTML = "no matching results";
+                        $('#myingredients').empty();
+                    }
+                }
+            }
+        };
+        xmlhttp.open("GET", "recipes.json", true);
+        xmlhttp.send();
+        event.preventDefault();
+        })
+    }
+
 
 
 </script>
-
+<script src="modal.js"></script>
 </body>
 </html>
