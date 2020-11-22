@@ -5,4 +5,4 @@ Steps to view html files:
 2) Open them using local browser
 3) Some buttons work and some don't
 4) To view a functional search.html page, start a local server on your machine. Our group used this command:
-python -m SimpleHTTPServer 8000
+python -m SimpleHTTPServer 8000. Once the search.html is launched, type in "test recipe" or "test recipe2", hit Enter, and it will show ingredients in the right column.
