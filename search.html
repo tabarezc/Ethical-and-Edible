@@ -107,16 +107,20 @@
                         //to populate ingredients list for found recipe
                         var ingredients = myArr.Recipes[i].ingredients;
                         var ul = document.getElementById("myingredients");
-                        for( var j = 0; j < ingredients.length; j++){
+                        for (var j = 0; j < ingredients.length; j++){
                             var ingredient = ingredients[j];
+                            //Creates new list node for every ingredient
                             var listItem = document.createElement("li");
+                            //Adds the ingredient name as the text content of the list node
                             listItem.textContent = ingredient;
                             ul.appendChild(listItem);
                         }
                         break;
+                    //If the search bar is empty
                     }else if (searchName == "" ){
                         document.getElementById("recipeName").innerHTML = "";
                         $('#myingredients').empty();
+                    //If nothing is found
                     } else{
                         document.getElementById("recipeName").innerHTML = "no matching results";
                         //make sure list of ingredients is cleared from previous searches
