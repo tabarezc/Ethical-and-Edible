@@ -95,6 +95,7 @@
                 var myArr = JSON.parse(this.responseText);
                 //get # of items in array
                 var count = myArr.Recipes.length;
+                console.log(myArr.Recipes[0].name);
                 //document.getElementById("count").innerHTML = count;
                 input = document.getElementById("mySearch");
                 searchName = input.value.toUpperCase();
