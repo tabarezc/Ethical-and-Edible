@@ -23,6 +23,7 @@
     width:200px;
     height:200px;
     background:#ffa;
+    display:block;
     }	
 #centerContent {
 	position:absolute;  
@@ -30,7 +31,8 @@
 	width:100px;
 	height:70px;
 	top:70px;
-	background:#ffa;
+    background:#ffa;
+    display:block;
 }
 #rightContent {
     position:absolute;  
@@ -38,6 +40,10 @@
     width:350px;
     height:200px;
     background:#ffa;
+    display:block;
+    }
+#mainBottom {
+    display:block;
     }
 #footer {
 	margin-top:5px;
