@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ethical and Edible</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="home.css" class="stylesheet">
@@ -12,7 +13,9 @@
 
 <body>
     <div class="container">
+
         <h1 class="display-1 text-center text-primary">Ethical and Edible</h1>
+<<<<<<< HEAD
         <form action="search.html" method="GET">
         <div class="input-group mb-3">            
                 <input type="text" class="form-control" placeholder="Search" aria-label="Search"
@@ -28,8 +31,29 @@
                 </div>            
             </div>
         </form>
+=======
+        
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Search" aria-label="Search"
+            aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2"><svg width="1em" height="1em"
+                    viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                    d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                    <path fill-rule="evenodd"
+                    d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                </svg></button>
+            </div>
+        </div>
+        
+        <div id="nav-placeholder"></div>
+        
+>>>>>>> 313f055816e0018e2c70cd09f7f22af7a3b69b24
 
-        <nav class="navbar navbar-expand-lg navbar-light">
+        <!-- Removed this section of the code because it's duplicative with the navbar.html and added javascript code -->
+        <!--Navigation bar-->
+        <!--<nav class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand" href="#">Explore</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -84,16 +108,22 @@
                     </li>
                 </ul>
             </div>
-        </nav>
+        </nav>-->
 
     </div>
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    <!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>-->
+    
+    <script>
+        $(function () {
+            $("#nav-placeholder").load("navbar.html");
+        });
+    </script>
 
 </body>
 

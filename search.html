@@ -52,15 +52,7 @@
 
 <script>
 
-    /*ar testList = document.getElementById("myMenu");
-    var menu = document.createElement("li");
-    var node = document.createTextNode("test");
-
-    //menu.outerHTML('<a href="#">Caramel Apple Cheesecake</a>');
-    testList.appendChild(menu);
-
-
-    function myFunction() {
+    /*function myFunction() {
         var input, filter, ul, li, a, i;
         input = document.getElementById("mySearch");
         filter = input.value.toUpperCase();
@@ -75,28 +67,6 @@
             }
         }
     }*/
-
-    
-    /*const xhr = new XMLHttpRequest();
-
-    //Connects to JSON object and creates a Javascript Object
-    xhr.onload = function () {
-        try {
-            const resObj = JSON.parse(this.responseText);
-            console.log(resObj);
-
-
-
-            //var result = resObj.filter(obj => obj.Receipes.name == "Apple");
-
-
-        } catch (e) {
-            console.warn("Could not parse JSON!");
-        }
-    };
-
-    xhr.open("get", "test.json");
-    xhr.send();*/
 
     //TESTING CODE
     /*document.addEventListener('DOMContentLoaded', bindButtons);
@@ -115,6 +85,9 @@
         })
       }*/
 
+    console.log("This is a test");
+    console.log(myArr);
+
     document.addEventListener('DOMContentLoaded', bindButtons);
 
     function bindButtons(){
@@ -125,6 +98,7 @@
                 var myArr = JSON.parse(this.responseText);
                 //get # of items in array
                 var count = myArr.Recipes.length;
+                console.log("This is a test");
                 //document.getElementById("count").innerHTML = count;
                 input = document.getElementById("mySearch");
                 searchName = input.value.toUpperCase();
@@ -137,16 +111,20 @@
                         //to populate ingredients list for found recipe
                         var ingredients = myArr.Recipes[i].ingredients;
                         var ul = document.getElementById("myingredients");
-                        for( var j = 0; j < ingredients.length; j++){
+                        for (var j = 0; j < ingredients.length; j++){
                             var ingredient = ingredients[j];
+                            //Creates new list node for every ingredient
                             var listItem = document.createElement("li");
+                            //Adds the ingredient name as the text content of the list node
                             listItem.textContent = ingredient;
                             ul.appendChild(listItem);
                         }
                         break;
+                    //If the search bar is empty
                     }else if (searchName == "" ){
                         document.getElementById("recipeName").innerHTML = "";
                         $('#myingredients').empty();
+                    //If nothing is found
                     } else{
                         document.getElementById("recipeName").innerHTML = "no matching results";
                         //make sure list of ingredients is cleared from previous searches
