@@ -18,7 +18,7 @@
 	background:#ffa;
     }
 #leftContent {
-    position:absolute;  
+    position:relative;  
 	left:0;
     width:200px;
     height:200px;
@@ -26,19 +26,20 @@
     display:block;
     }	
 #centerContent {
-	position:absolute;  
+	position:relative;  
 	margin-left:210px;
 	width:100px;
 	height:70px;
-	top:70px;
+	top:-150px;
     background:#ffa;
     display:block;
 }
 #rightContent {
-    position:absolute;  
+    position:relative;  
 	margin-left:300px;
     width:350px;
     height:200px;
+    top:-270px;
     background:#ffa;
     display:block;
     }
