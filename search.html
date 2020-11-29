@@ -10,7 +10,7 @@
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
 </head>
-<body>
+<body onload="searchFromHomePage();">
 
     <!--Navigation bar-->
 <div id="nav-placeholder" style="width:50%; margin: auto;">
@@ -89,6 +89,15 @@
     console.log(myArr);
 
     document.addEventListener('DOMContentLoaded', bindButtons);
+
+    function searchFromHomePage(){
+        var queryString = decodeURIComponent(window.location.search);
+        queryString = queryString.substring(1);
+        //var queries = queryString.split("&)")
+        //for (var i=0; i<queries.length; i++){queries[i];}
+        document.getElementById("mySearch").innerHTML = 
+        bindButtons();
+    }
 
     function bindButtons(){
         document.getElementById('mySearch').addEventListener('search', function(event){
