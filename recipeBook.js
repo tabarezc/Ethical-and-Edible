@@ -1,5 +1,7 @@
+var RecipeBook = {};
 window.addEventListener('DOMContentLoaded', function(event) {
     setupModal();
+    loadRecipeBook();
 });
 function loadRecipes(){
     var xmlhttp = new XMLHttpRequest();
@@ -8,7 +10,6 @@ function loadRecipes(){
             var response = JSON.parse(this.responseText);
             var recipeListElement = document.getElementById("recipeList");
                 for(var recipe of response.Recipes){
-                    //<li><input type="radio">Soup</input></li>
                     var li = document.createElement("li");
                     var input = document.createElement("input");
                     input.setAttribute("type","radio");
@@ -22,9 +23,27 @@ function loadRecipes(){
     xmlhttp.open("GET", "recipes.json", true);
     xmlhttp.send();
 }
-function loadRecipeBook(){}
-function saveRecipeBook(){}
-function addRecipe(recipe){}
+function loadRecipeBook(){
+    RecipeBook = JSON.parse(window.localStorage.getItem("RecipeBook"));
+}
+function saveRecipeBook(){
+    var recipeBookJson = JSON.stringify(RecipeBook);
+    window.localStorage.setItem("RecipeBook", recipeBookJson);
+}
+function addRecipe(recipe, category){
+    if(RecipeBook[category]){
+        RecipeBook[category].push(recipe);
+	}
+    else{
+     RecipeBook[category] = [];
+     RecipeBook[category].push(recipe);
+	}
+}
+
+function onAddRecipeClicked(){
+    var selectElem = document.getElementById("categorySelect");
+    var category = selectElem.value;
+}
 function setupModal(){
     var modal = document.getElementById("myModal");
 
