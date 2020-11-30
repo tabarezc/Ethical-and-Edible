@@ -6,27 +6,27 @@
     <meta charset="utf-8" />
     <title>Recipe Library</title>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-
+    <script src="recipeBook.js"></script>
 </head>
 <body>
 
     <!--Navigation bar-->
-<div id="nav-placeholder" style="width:50%; margin: auto;">
+    <div id="nav-placeholder" style="width:50%; margin: auto;">
 
-</div>
+    </div>
 
-<script>
-    $(function () {
+    <script>
+        $(function () {
         $("#nav-placeholder").load("navbar.html");
-    });
-</script>
-<!--end of Navigation bar-->
+        });
+    </script>
+    <!--end of Navigation bar-->
     <div class="topnav">
         <a class="active" href="Home.html">Home</a>
         <input type="text" placeholder="Search recipes">
     </div>
     <h2>Recipe Library</h2>
-    <a href="addrecipebook.html">+ Add A Recipe</a>
+    <button id="addRecipeButton">+ Add A Recipe</button>
     <a href="recipes.html?category=breakfast">
         <div style="border:1px solid black;">
             <h2>Breakfast</h2>
@@ -52,7 +52,16 @@
         </div>
     </a>
 
-<script src="recipeBook.js"></script>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Some text in the Modal..</p>
+        </div>
+
+    </div>
 </body>
 
 </html>
