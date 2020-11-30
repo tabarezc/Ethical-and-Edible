@@ -6,7 +6,15 @@ function loadRecipes(){
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var response = JSON.parse(this.responseText);
+            var recipeListElement = document.getElementById("recipeList");
                 for(var recipe of response.Recipes){
+                    //<li><input type="radio">Soup</input></li>
+                    var li = document.createElement("li");
+                    var input = document.createElement("input");
+                    input.setAttribute("type","radio");
+                    li.appendChild(input);
+                    li.appendChild(document.createTextNode(recipe.name));
+                    recipeListElement.appendChild(li);
                     console.log(recipe.name);
                 }
         }
@@ -14,6 +22,9 @@ function loadRecipes(){
     xmlhttp.open("GET", "recipes.json", true);
     xmlhttp.send();
 }
+function loadRecipeBook(){}
+function saveRecipeBook(){}
+function addRecipe(recipe){}
 function setupModal(){
     var modal = document.getElementById("myModal");
 
@@ -39,4 +50,5 @@ function setupModal(){
         modal.style.display = "none";
       }
     }
+    loadRecipes();
 }
