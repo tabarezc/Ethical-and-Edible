@@ -1,13 +1,13 @@
-var RecipeBook = {};
+const RecipeBook = {};
 const urlParams = new URLSearchParams(window.location.search);
 window.addEventListener('DOMContentLoaded', function(event) {
+    loadRecipeBook();
     if(window.location.pathname == "/recipeLibrary.html"){
      setupModal();
 	}
     else if(window.location.pathname == "/recipeBook.html"){
      setupRecipeBook();
 	}
-    loadRecipeBook();
 });
 function loadRecipes(){
     var xmlhttp = new XMLHttpRequest();
@@ -32,7 +32,7 @@ function loadRecipes(){
     xmlhttp.send();
 }
 function loadRecipeBook(){
-    RecipeBook = JSON.parse(window.localStorage.getItem("RecipeBook"));
+    Object.assign(RecipeBook, JSON.parse(window.localStorage.getItem("RecipeBook")));
 }
 function saveRecipeBook(){
     var recipeBookJson = JSON.stringify(RecipeBook);
@@ -80,9 +80,16 @@ function setupModal(){
         modal.style.display = "none";
       }
     }
+    document.getElementById("addToButton").onclick = onAddRecipeClicked;
     loadRecipes();
 }
 
 function setupRecipeBook(){
     document.getElementById("categoryTitle").innerText = urlParams.get("category");
+    var recipeList = document.getElementById("recipeList");
+    for(var recipe of RecipeBook[urlParams.get("category")]){
+        var li = document.createElement("li");
+        li.appendChild(document.createTextNode(recipe));
+        recipeList.appendChild(li);
+	}
 }
