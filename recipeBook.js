@@ -13,10 +13,12 @@ function loadRecipes(){
                     var li = document.createElement("li");
                     var input = document.createElement("input");
                     input.setAttribute("type","radio");
+                    input.setAttribute("name", "recipes");
+                    input.setAttribute("value", recipe.name);
                     li.appendChild(input);
                     li.appendChild(document.createTextNode(recipe.name));
                     recipeListElement.appendChild(li);
-                    console.log(recipe.name);
+                    //console.log(recipe.name);
                 }
         }
     }
@@ -41,8 +43,10 @@ function addRecipe(recipe, category){
 }
 
 function onAddRecipeClicked(){
-    var selectElem = document.getElementById("categorySelect");
-    var category = selectElem.value;
+    var category = document.getElementById("categorySelect").value;
+    var recipe = document.querySelector('input[name = "recipes"]:checked').value;
+    addRecipe(recipe, category);
+    saveRecipeBook();
 }
 function setupModal(){
     var modal = document.getElementById("myModal");
