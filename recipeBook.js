@@ -53,6 +53,7 @@ function onAddRecipeClicked(){
     var recipe = document.querySelector('input[name = "recipes"]:checked').value;
     addRecipe(recipe, category);
     saveRecipeBook();
+    document.getElementById("myModal").style.display = "none";
 }
 
 function setupModal(){
