@@ -1,6 +1,12 @@
 var RecipeBook = {};
+const urlParams = new URLSearchParams(window.location.search);
 window.addEventListener('DOMContentLoaded', function(event) {
-    setupModal();
+    if(window.location.pathname == "/recipeLibrary.html"){
+     setupModal();
+	}
+    else if(window.location.pathname == "/recipeBook.html"){
+     setupRecipeBook();
+	}
     loadRecipeBook();
 });
 function loadRecipes(){
@@ -48,6 +54,7 @@ function onAddRecipeClicked(){
     addRecipe(recipe, category);
     saveRecipeBook();
 }
+
 function setupModal(){
     var modal = document.getElementById("myModal");
 
@@ -74,4 +81,8 @@ function setupModal(){
       }
     }
     loadRecipes();
+}
+
+function setupRecipeBook(){
+    document.getElementById("categoryTitle").innerText = urlParams.get("category");
 }
