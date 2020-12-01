@@ -85,20 +85,64 @@
         })
       }*/
 
-    console.log("This is a test");
-    console.log(myArr);
+    console.log("This is a test 1");
 
     document.addEventListener('DOMContentLoaded', bindButtons);
 
     function searchFromHomePage(){
+        //the following will send search input from Home.html to search.html
         var queryString = decodeURIComponent(window.location.search);
         queryString = queryString.substring(1);
         const urlParams = new URLSearchParams(queryString);
         for (const value of urlParams.values()) {
-            document.getElementById("mySearch").innerHTML = value;
+            document.getElementById("mySearch").value = value;
         }
         
-        bindButtons();
+        //the following will search data on recipes.json file and use Asynch method of xmlhttprequest
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var myArr = JSON.parse(this.responseText);
+
+                //get # of items in array
+                var count = myArr.Recipes.length;
+
+                input = document.getElementById("mySearch");
+                searchName = input.value.toUpperCase();
+
+                for(var i = 0; i < count; i++){
+                    if( searchName == myArr.Recipes[i].name.toUpperCase()){
+                        //make sure list of ingredients is cleared from previous searches
+                        $('#myingredients').empty(); 
+                        //to show found recipe names
+                        document.getElementById("recipeName").innerHTML = myArr.Recipes[i].name;
+                        //to populate ingredients list for found recipe
+                        var ingredients = myArr.Recipes[i].ingredients;
+                        var ul = document.getElementById("myingredients");
+                        for (var j = 0; j < ingredients.length; j++){
+                            var ingredient = ingredients[j];
+                            //Creates new list node for every ingredient
+                            var listItem = document.createElement("li");
+                            //Adds the ingredient name as the text content of the list node
+                            listItem.textContent = ingredient;
+                            ul.appendChild(listItem);
+                        }
+                        break;
+                    //If the search bar is empty
+                    }else if (searchName == "" ){
+                        document.getElementById("recipeName").innerHTML = "";
+                        $('#myingredients').empty();
+                    //If nothing is found
+                    } else{
+                        document.getElementById("recipeName").innerHTML = "no matching results";
+                        //make sure list of ingredients is cleared from previous searches
+                        $('#myingredients').empty();
+                    }
+                }
+            }
+        };
+        xmlhttp.open("GET", "recipes.json", true);
+        xmlhttp.send(); 
     }
 
     function bindButtons(){
@@ -109,7 +153,6 @@
                 var myArr = JSON.parse(this.responseText);
                 //get # of items in array
                 var count = myArr.Recipes.length;
-                console.log("This is a test");
                 //document.getElementById("count").innerHTML = count;
                 input = document.getElementById("mySearch");
                 searchName = input.value.toUpperCase();
