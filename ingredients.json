@@ -4,15 +4,19 @@
       "name": "Avocado",
       "type": "Fruit",
       "rating": 1,
-      "ethical alternatives": "Chickpeas",
-      "potential problems": "Takes up lots of water"
+      "alternatives": [
+        "Chickpeas"
+      ], 
+      "problems": "Takes up lots of water"
     },
     {
       "name": "Apple",
       "type": "Fruit",
       "rating": 10,
-      "ethical alternatives": "None",
-      "potential problems": "None"
+      "alternatives": [
+        "None"
+      ],
+      "problems": "None"
     }
   ]
 }

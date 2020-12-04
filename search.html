@@ -8,6 +8,7 @@
     <meta charset="utf-8" />
     <title>Ethical and Edible</title>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    
 
 </head>
 <body onload="searchFromHomePage();">
@@ -27,7 +28,7 @@
 
 <h2>Search Menu</h2>
 <p>Search for a recipe and press enter.</p>
-    <div class="row">
+<div class="row">
     <div class="left" style="background-color:#bbb;">
         <h2>Menu</h2>
         <input type="search" id="mySearch" placeholder="Search.." title="Type in a category">
@@ -36,16 +37,31 @@
         
     </div>
     
-<div class="right" style="background-color:#ddd;">
-    <ul id="myMenu">
-        <h1 id="recipeName"></h1>
-            <div class="ingredientlist">
-                <h2 class="ingredientlist">Ingredients: <span style="font-size: 15px">(click an ingredient to view ethical information)</span></h2>
-                <ul id="myingredients" ></ul>
-            </div>
-    </ul>
+    <div class="right" style="background-color:#ddd;">
+        <ul id="myMenu">
+            <h1 id="recipeName"></h1>
+                <div class="ingredientlist">
+                    <h2 class="ingredientlist">Ingredients: <span style="font-size: 15px">(click an ingredient to view ethical information)</span></h2>
+                    <ul id="myingredients" > </ul>
+                </div>
+        </ul>
     </div>
+</div>
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="span">&times;</span>
+        <h1 id='ingredientname'></h1>
+        <h2>Rating: <p id='irating'></p></h2>
+        <h3>Type: </h3><p id=itype></p>
+        <h3>Potential Problems: </h3><p id= iprobs></p>
+        <div class="altslist">
+            <h3 class="altslist">Alternative Ingredients: </h3>
+            <ul id="altslist" > </ul>
+        </div>
     </div>
+</div>
+
     <div align="center">
         <div><button onclick="location.href='recipeLibrary.html'">Save to Recipe Library</button></div>
     </div>
@@ -85,9 +101,10 @@
         })
       }*/
 
-    console.log("This is a test 1");
+    //console.log("This is a test 1");
 
     document.addEventListener('DOMContentLoaded', bindButtons);
+    
 
     function searchFromHomePage(){
         //the following will send search input from Home.html to search.html
