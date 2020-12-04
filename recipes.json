@@ -1,26 +1,83 @@
 {
-    "Recipes": [
-        {
-            "name": "Test Recipe",
-            "ingredients": [
-                "Avocado",
-                "Apple"
-            ]
-        },
-        {
-            "name": "Test Recipe2",
-            "ingredients": [
-                "Orange",
-                "Spinach"
-            ]
-        },
-        {
-            "name": "Test Recipe3",
-            "ingredients": [
-                "Banana",
-                "Cherry",
-                "Almond Milk"
-            ]
-        }
-    ]
+  "Recipes": [
+    {
+      "name": "Stir Fry",
+      "ingredients": [
+        "Chicken",
+        "Rice"
+      ]
+    },
+    {
+      "name": "Fried Rice",
+      "ingredients": [
+        "Chicken",
+        "Eggs",
+        "Rice"
+      ]
+    },
+    {
+      "name": "Potato Chowder",
+      "ingredients": [
+        "Potato",
+        "Milk",
+        "Cheese"
+      ]
+    },
+    {
+      "name": "Vegetable Noodle Soup",
+      "ingredients": [
+        "Carrot",
+        "Pasta"
+      ]
+    },
+    {
+      "name": "Cornbread",
+      "ingredients": [
+        "Butter",
+        "Milk",
+        "Flour"
+      ]
+    },
+    {
+      "name": "Chocolate Chip Cookies",
+      "ingredients": [
+        "Butter",
+        "Chocolate",
+        "Flour"
+      ]
+    },
+    {
+      "name": "Ham and Bean Soup",
+      "ingredients": [
+        "Ham",
+        "Beans"
+      ]
+    },
+    {
+      "name": "Chicken and Rice Soup",
+      "ingredients": [
+        "Chicken",
+        "Rice",
+        "Carrot"
+      ]
+    },
+    {
+      "name": "Grilled Cheese Sandwich",
+      "ingredients": [
+        "Bread",
+        "Butter",
+        "Cheese"
+      ]
+    },
+    {
+      "name": "Cheeseburger",
+      "ingredients": [
+        "Beef",
+        "Cheese",
+        "Bread",
+        "Lettuce",
+        "Tomato"
+      ]
+    }
+  ]
 }

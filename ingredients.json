@@ -3,10 +3,10 @@
     {
       "name": "Avocado",
       "type": "Fruit",
-      "rating": 1,
+      "rating": 3,
       "alternatives": [
         "Chickpeas"
-      ], 
+      ],
       "problems": "Takes up lots of water"
     },
     {
@@ -17,6 +17,177 @@
         "None"
       ],
       "problems": "None"
+    },
+    {
+      "name": "Butter",
+      "type": "Dairy",
+      "rating": 3,
+      "alternatives": [
+        "Margarine"
+      ],
+      "problems": "Butter is a dairy product. Since it comes from cow it contributes greatly to greenhouse gas emissions."
+    },
+    {
+      "name": "Chicken",
+      "type": "Meat",
+      "rating": 1,
+      "alternatives": [
+        "Tofu"
+      ],
+      "problems": "Being a meat product, chicken contributes to greenhouse gases"
+    },
+    {
+      "name": "Rice",
+      "type": "Carb",
+      "rating": 3,
+      "alternatives": [
+        "Cauliflower"
+      ],
+      "problems": "The carbon footprint of rice is roughly equivalent to that of international aviation"
+    },
+    {
+      "name": "Cauliflower",
+      "type": "Vegetable",
+      "rating": 8,
+      "alternatives": [
+        "Rice"
+      ],
+      "problems": "Cauliflower needs a constant source of water to grow, though the soil only needs to be moist"
+    },
+    {
+      "name": "Eggs",
+      "type": "Protein",
+      "rating": 1,
+      "alternatives": [
+        "Tofu"
+      ],
+      "problems": "Eggs are a meat byproduct, so they contribute equally to greenhouse gas emissions as chicken"
+    },
+    {
+      "name": "Tofu",
+      "type": "Protein",
+      "rating": 10,
+      "alternatives": [
+        "Meat products"
+      ],
+      "problems": "None if grown properly"
+    },
+    {
+      "name": "Milk",
+      "type": "Dairy",
+      "rating": 3,
+      "alternatives": [
+        "Soymilk"
+      ],
+      "problems": "Milk production contributes to greenhouse gas emissions"
+    },
+    {
+      "name": "Cheese",
+      "type": "Dairy",
+      "rating": 3,
+      "alternatives": [
+        "Nut cheese"
+      ],
+      "problems": "Cheese production contributes to greenhouse gas emissions"
+    },
+    {
+      "name": "Potato",
+      "type": "Vegetable",
+      "rating": 9,
+      "alternatives": [
+        "Squash"
+      ],
+      "problems": "Potatoes themselves have a very low carbon footprint, but post-production does increase it somewhat"
+    },
+    {
+      "name": "Carrot",
+      "type": "Vegetable",
+      "rating": 8,
+      "alternatives": [
+        "Squash"
+      ],
+      "problems": "Carrots have a relatively low carbon footprint"
+    },
+    {
+      "name": "Pasta",
+      "type": "Carb",
+      "rating": 6,
+      "alternatives": [
+        "Vegetable Pasta"
+      ],
+      "problems": "Egg pasta's carbon footprint is about a third higher than vegetable-based pastas"
+    },
+    {
+      "name": "Flour",
+      "type": "Grain",
+      "rating": 7,
+      "alternatives": [
+        "Corn based flour"
+      ],
+      "problems": "Wheat flour is slightly higher in its carbon footprint than maize flour"
+    },
+    {
+      "name": "Chocolate",
+      "type": "Sweet",
+      "rating": 3,
+      "alternatives": [
+        "Fruits, other sweets"
+      ],
+      "problems": "Chocolate has a unique problem that it may be grown and cultivated using slave labor. The consumer will need to do some research to determine where their chocolate comes from."
+    },
+    {
+      "name": "Ham",
+      "type": "Meat",
+      "rating": 3,
+      "alternatives": [
+        "Fruits, other sweets"
+      ],
+      "problems": "Pork products have a similar carbon footprint as dairy products"
+    },
+    {
+      "name": "Beans",
+      "type": "Vegetable",
+      "rating": 10,
+      "alternatives": [
+        "None"
+      ],
+      "problems": "Lentils and most other beans have some of the lowest carbon footprints"
+    },
+    {
+      "name": "Bread",
+      "type": "Grain",
+      "rating": 8,
+      "alternatives": [
+        "Tortilla"
+      ],
+      "problems": "Bread production has a slightly higher carbon footprint than regular wheat production"
+    },
+    {
+      "name": "Beef",
+      "type": "Grain",
+      "rating": 1,
+      "alternatives": [
+        "Mushrooms, Tofu"
+      ],
+      "problems": "Beef production has one of the highest carbon footprints of any meat product"
+    },
+    {
+      "name": "Lettuce",
+      "type": "Grain",
+      "rating": 8,
+      "alternatives": [
+        "Spinach"
+      ],
+      "problems": "Lettuce has a relatively low carbon footprint"
+    },
+    {
+      "name": "Tomato",
+      "type": "Grain",
+      "rating": 9,
+      "alternatives": [
+        "Peppers"
+      ],
+      "problems": "Tomatoes have a relatively low carbon footprint"
     }
   ]
 }
