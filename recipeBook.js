@@ -88,9 +88,18 @@ function setupModal(){
 function setupRecipeBook(){
     document.getElementById("categoryTitle").innerText = urlParams.get("category");
     var recipeList = document.getElementById("recipeList");
-    for(var recipe of RecipeBook[urlParams.get("category")]){
+    for(var [i, recipe] of RecipeBook[urlParams.get("category")].entries()){
         var li = document.createElement("li");
         li.appendChild(document.createTextNode(recipe));
+        var removebutton = document.createElement("button");
+        removebutton.appendChild(document.createTextNode("Remove"));
+        li.appendChild(removebutton);
         recipeList.appendChild(li);
+        let recipeIndex = i;
+        removebutton.onclick = function(event){
+            RecipeBook[urlParams.get("category")].splice(recipeIndex, 1);
+            recipeList.removeChild(event.target.parentNode);
+            saveRecipeBook();
+        }
 	}
 }

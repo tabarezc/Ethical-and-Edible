@@ -1,4 +1,9 @@
 # Ethical-and-Edible
+Release 3 Notes (12/4/2020):
+1) Open home.html page using the following link:
+https://tabarezc.github.io/Ethical-and-Edible/Home.html
+2) Select options or buttons to get to other pages.
+
 Release 2 Notes (11/22/2020):
 Method 1:
 Steps to view html files:
