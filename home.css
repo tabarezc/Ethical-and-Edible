@@ -61,3 +61,7 @@ footer .nav-link {
 .subscribeBox {
     width: 300px;
 }
+
+.buffer {
+    height: 5rem;
+}
